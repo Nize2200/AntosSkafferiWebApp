@@ -35,8 +35,10 @@ const NavLinks = styled.div`
     display: flex;
     position: absolute;
     margin-left: 40%;
+    text-align: center;
     justify-content: center;
     flex-grow: 1;
+    gap: 20px;
 `;
 
 const MenuItem = styled.a`
