@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const Solidline = styled.div`
-
-    width: 1300px;
     height: 0px;
     left: 70px;
     top: 142px;

@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import HamburgerMenu from "./Buttons/HamburgerMenu.tsx";
+
+const HamburgerStyle = styled.div`
+    
+    margin-right: 10px;
+
+`;
 
 const TopNavigation = styled.div`
     position: fixed;
@@ -19,7 +26,7 @@ const TopNavigation = styled.div`
 const StyledLogo = styled.div`
     display: flex;
     align-items: center;
-    font-family: "Blackadder ITC";
+    font-family: "Courier New";
     font-size: 30px;
 `;
 
@@ -44,8 +51,6 @@ const MenuItem = styled.a`
 `;
 
 
-
-
 const NavigationBar: React.FC = () => {
 
 
@@ -53,13 +58,16 @@ const NavigationBar: React.FC = () => {
         <>
             <TopNavigation>
                 <StyledLogo>
-                    <MenuItem>Antos</MenuItem>
+                    <MenuItem>Antons</MenuItem>
                 </StyledLogo>
                 <NavLinks>
                     <MenuItem href="meny">Meny</MenuItem>
                     <MenuItem href="nyheter">Nyheter</MenuItem>
                     <MenuItem href="bokabord">Boka bord</MenuItem>
                 </NavLinks>
+                <HamburgerStyle>
+                    <HamburgerMenu/>
+                </HamburgerStyle>
             </TopNavigation>
         </>
     );

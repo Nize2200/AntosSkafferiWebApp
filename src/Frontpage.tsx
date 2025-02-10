@@ -9,7 +9,9 @@ const Main = styled.div`
 `;
 const StyledHeader = styled.div`
     text-align: center;
-    font-family: "Blackadder ITC";
+    justify-content: center;
+    align-content: center;
+    font-family: "Courier New";
     font-size: 110px;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -27,10 +29,12 @@ function App() {
 
     return (
         <Main>
+
             <StyledHeader>
-                Antos Skafferi
+                Antons Skafferi
+                <SolidLine/>
             </StyledHeader>
-            <SolidLine/>
+
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
