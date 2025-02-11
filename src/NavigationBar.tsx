@@ -56,8 +56,8 @@ const NavigationBar: React.FC = () => {
 
     return (
         <>
+            <GlobalStyle/>
             <TopNavigation>
-                <GlobalStyle/>
                 <StyledLogo>
                     <MenuItem>Antons</MenuItem>
                 </StyledLogo>
