@@ -4,9 +4,7 @@ import styled from "styled-components";
 import HamburgerMenu from "./Buttons/HamburgerMenu.tsx";
 
 const HamburgerStyle = styled.div`
-    
     margin-right: 10px;
-
 `;
 
 const TopNavigation = styled.div`
@@ -21,6 +19,7 @@ const TopNavigation = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
     padding: 0 20px;
 `;
 

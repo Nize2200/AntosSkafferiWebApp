@@ -10,7 +10,7 @@ const StyledTitle = styled.div`
     font-family: "Courier New";
 `;
 const StyledText = styled.div`
-    
+
 
 `;
 
@@ -19,7 +19,9 @@ function App() {
 
     return (
         <Main>
-            <StyledTitle>Dagens:</StyledTitle>
+            <StyledTitle>
+                Dagens:
+            </StyledTitle>
             <StyledText>
                 import from api
             </StyledText>

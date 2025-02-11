@@ -41,6 +41,7 @@ function App() {
             </StyledNavigation>
             <DagensFrontPage/>
             <VeckansFrontpage/>
+            <NewsFrontPage/>
         </Main>
 
     );
