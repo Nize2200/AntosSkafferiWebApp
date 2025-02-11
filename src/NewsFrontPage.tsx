@@ -7,20 +7,21 @@ const Main = styled.div`
 const StyledTitle = styled.div`
     text-align: center;
     font-size: 50px;
-    font-family: "Courier New";
+    font-family: "Kapakana";
+    src: url('/Fonts/Kapakana[wght].ttf');
 `;
 const StyledText = styled.div`
 
 
 `;
 
-function App() {
+function NewsFrontPage() {
 
 
     return (
         <Main>
-            <StyledTitle>
-                Dagens:
+            <StyledTitle style={{ fontfamily: "'Kapakana', sans-serif" }}>
+                Nyheter:
             </StyledTitle>
             <StyledText>
                 import from api
@@ -32,4 +33,4 @@ function App() {
 }
 
 
-export default App;
+export default NewsFrontPage;

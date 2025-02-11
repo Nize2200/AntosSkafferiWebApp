@@ -3,6 +3,7 @@ import DagensFrontPage from "./DagensFrontPage.tsx";
 import VeckansFrontpage from "./VeckansFrontpage.tsx";
 import NavigationBar from "./NavigationBar.tsx";
 import SolidLine from "./Typographi/styledline.tsx";
+import NewsFrontPage from "./NewsFrontPage.tsx";
 
 
 const Main = styled.div`
@@ -40,6 +41,7 @@ function App() {
             </StyledNavigation>
             <DagensFrontPage/>
             <VeckansFrontpage/>
+            <NewsFrontPage/>
         </Main>
 
     );
