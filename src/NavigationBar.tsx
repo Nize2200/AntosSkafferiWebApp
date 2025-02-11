@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// @ts-ignore
 import HamburgerMenu from "./Buttons/HamburgerMenu.tsx";
+import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
 
 const HamburgerStyle = styled.div`
     margin-right: 10px;
@@ -26,7 +26,7 @@ const TopNavigation = styled.div`
 const StyledLogo = styled.div`
     display: flex;
     align-items: center;
-    font-family: "Courier New";
+    font-family: "Kapakana", sans-serif;
     font-size: 30px;
 `;
 
@@ -57,6 +57,7 @@ const NavigationBar: React.FC = () => {
     return (
         <>
             <TopNavigation>
+                <GlobalStyle/>
                 <StyledLogo>
                     <MenuItem>Antons</MenuItem>
                 </StyledLogo>

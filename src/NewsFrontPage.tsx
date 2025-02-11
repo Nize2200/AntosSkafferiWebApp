@@ -1,17 +1,10 @@
-import styled, {createGlobalStyle} from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "Kapakana";
-    src: url("/Fonts/Kapakana[wght].ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
-`;
+import styled from "styled-components";
+import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
 
 const Main = styled.div`
 
 `;
+
 
 const StyledTitle = styled.div`
     text-align: center;
