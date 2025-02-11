@@ -1,17 +1,12 @@
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from "styled-components";
 
-const KapakanaFont = createGlobalStyle`
-    /* Local font import using @font-face */
+const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: 'MyCustomFont';
-        src: url('/public/Fonts/Kapakana[wght].ttf');
+        font-family: "Kapakana";
+        src: url("/Fonts/Kapakana[wght].ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
     }
-
-    body {
-        font-family: 'MyCustomFont', sans-serif;
-    }
 `;
 
-export default KapakanaFont;
+export default GlobalStyle;
