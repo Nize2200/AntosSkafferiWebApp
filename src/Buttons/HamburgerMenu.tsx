@@ -11,31 +11,31 @@ const Button = styled.button`
     justify-content: center;
     position: relative;
 
-    &:hover svg line:nth-child(1) {
-        transform: translateX(-5px);
-        transition: transform 0.2s ease-in-out;
-    }
-
-    &:hover svg line:nth-child(2) {
-        transform: translateX(5px);
-        transition: transform 0.2s ease-in-out;
-    }
-
-    &:hover svg line:nth-child(3) {
-        transform: translateX(-5px);
-        transition: transform 0.2s ease-in-out;
-    }
-
     svg {
         width: 40px;
         height: 40px;
         fill: #555;
     }
 
+    svg line {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover svg line:nth-child(1) {
+        transform: translateX(-5px);
+    }
+
+    &:hover svg line:nth-child(2) {
+        transform: translateX(5px);
+    }
+
+    &:hover svg line:nth-child(3) {
+        transform: translateX(-5px);
+    }
+
     &:hover .tooltip {
         opacity: 1;
         visibility: visible;
-     
     }
 `;
 
