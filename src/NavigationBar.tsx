@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// @ts-ignore
 import HamburgerMenu from "./Buttons/HamburgerMenu.tsx";
 
 const HamburgerStyle = styled.div`
@@ -33,8 +34,6 @@ const StyledLogo = styled.div`
 const NavLinks = styled.div`
     font-size: 20px;
     display: flex;
-    position: absolute;
-    margin-left: 40%;
     text-align: center;
     justify-content: center;
     flex-grow: 1;

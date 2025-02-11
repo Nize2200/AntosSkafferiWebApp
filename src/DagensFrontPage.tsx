@@ -21,7 +21,7 @@ function App() {
         <Main>
             <StyledTitle>Dagens:</StyledTitle>
             <StyledText>
-
+                import from api
             </StyledText>
         </Main>
 
