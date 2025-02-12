@@ -1,7 +1,9 @@
 import React from "react";
-import SolidLine from "../Typographi/styledline.tsx";
+import SolidLine from "../typographi/styledline.tsx";
 import NavigationBar from "../NavigationBar.tsx";
 import styled from "styled-components";
+import DagensFrontPage from "../components/DagensFrontPage.tsx";
+import NewsFrontPage from "../components/NewsFrontPage.tsx";
 
 const Main = styled.div`
 `;
@@ -22,7 +24,7 @@ const StyledNavigation = styled.div`
     margin-bottom: 50px;
 
 `;
-const BookingPage: React.FC = () => {
+const MenuPage: React.FC = () => {
     return (
         <Main>
             <StyledHeader>
@@ -32,9 +34,11 @@ const BookingPage: React.FC = () => {
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
+            <DagensFrontPage/>
+            <NewsFrontPage/>
         </Main>
     )
         ;
 };
 
-export default BookingPage;
+export default MenuPage;

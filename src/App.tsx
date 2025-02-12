@@ -1,10 +1,10 @@
 
-import NewsFrontPage from "./NewsFrontPage.tsx";
-import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
+import NewsFrontPage from "./components/NewsFrontPage.tsx";
+import GlobalStyle from "./typographi/KapakanaFontStyle.tsx";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import BookingPage from "./Pages/BookingPage.tsx";
-import MenuPage from "./Pages/MenuPage.tsx";
-import Frontpage from "./Pages/Frontpage.tsx";
+import BookingPage from "./pages/BookingPage.tsx";
+import MenuPage from "./pages/MenuPage.tsx";
+import Frontpage from "./pages/Frontpage.tsx";
 
 
 function App() {
