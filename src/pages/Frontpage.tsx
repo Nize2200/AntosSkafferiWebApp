@@ -1,6 +1,6 @@
 import React from "react";
 import SolidLine from "../typographi/styledline.tsx";
-import NavigationBar from "../NavigationBar.tsx";
+import NavigationBar from "../components/NavigationBar.tsx";
 import styled from "styled-components";
 import DagensFrontPage from "../components/DagensFrontPage.tsx";
 import NewsFrontPage from "../components/NewsFrontPage.tsx";
