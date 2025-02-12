@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import HamburgerMenu from "./buttons/HamburgerMenu.tsx";
-import GlobalStyle from "./typographi/KapakanaFontStyle.tsx";
+import HamburgerMenu from "../buttons/HamburgerMenu.tsx";
+import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 
 const HamburgerStyle = styled.div`
     margin-right: 10px;
