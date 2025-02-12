@@ -2,6 +2,7 @@ import React from "react";
 import SolidLine from "../typographi/styledline.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
 import styled from "styled-components";
+import InformationBookingPage from "../components/InformationBookingPage.tsx";
 
 const Main = styled.div`
 `;
@@ -32,6 +33,7 @@ const BookingPage: React.FC = () => {
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
+            <InformationBookingPage/>
         </Main>
     )
         ;

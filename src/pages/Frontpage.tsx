@@ -5,6 +5,7 @@ import styled from "styled-components";
 import DagensFrontPage from "../components/DagensFrontPage.tsx";
 import NewsFrontPage from "../components/NewsFrontPage.tsx";
 
+
 const Main = styled.div`
 `;
 const StyledHeader = styled.div`
