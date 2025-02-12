@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import GlobalStyle from "./typographi/KapakanaFontStyle.tsx";
+import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 
 const Main = styled.div`
 
