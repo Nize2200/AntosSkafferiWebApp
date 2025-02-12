@@ -2,6 +2,8 @@ import React from "react";
 import SolidLine from "../Typographi/styledline.tsx";
 import NavigationBar from "../NavigationBar.tsx";
 import styled from "styled-components";
+import DagensFrontPage from "../DagensFrontPage.tsx";
+import NewsFrontPage from "../NewsFrontPage.tsx";
 
 const Main = styled.div`
 `;
@@ -32,6 +34,8 @@ const MenuPage: React.FC = () => {
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
+            <DagensFrontPage/>
+            <NewsFrontPage/>
         </Main>
     )
         ;

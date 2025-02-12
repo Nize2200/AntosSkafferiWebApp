@@ -62,7 +62,6 @@ const NavigationBar: React.FC = () => {
                 </StyledLogo>
                 <NavLinks>
                     <MenuItem to="/meny">Meny</MenuItem>
-                    <MenuItem to="/nyheter">Nyheter</MenuItem>
                     <MenuItem to="/bokabord">Boka bord</MenuItem>
                 </NavLinks>
                 <HamburgerStyle>

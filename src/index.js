@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import Frontpage from "./Frontpage.tsx";
+import Frontpage from "./App.tsx";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
