@@ -24,6 +24,7 @@ const StyledNavigation = styled.div`
     margin-bottom: 50px;
 
 `;
+
 const MenuPage: React.FC = () => {
     return (
         <Main>
