@@ -17,9 +17,9 @@ const StyledHeader = styled.div`
     justify-content: center;
     align-content: center;
     font-family: "Kapakana", sans-serif;
-    font-size: 110px;
+    font-size: 4rem;
     margin-bottom: 50px;
-    margin-top: 50px;
+    margin-top: 4rem;
 
 `;
 
@@ -35,7 +35,7 @@ function App() {
             <GlobalStyle />
             <Main>
                 <StyledHeader>
-                    Antons Skafferi
+                    Antons skafferi
                     <SolidLine />
                 </StyledHeader>
                 <StyledNavigation>
