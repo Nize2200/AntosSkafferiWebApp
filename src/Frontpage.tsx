@@ -6,8 +6,8 @@ import SolidLine from "./Typographi/styledline.tsx";
 import NewsFrontPage from "./NewsFrontPage.tsx";
 import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BookingPage from "./Pages/BookingPage.tsx";
-import MenuPage from "./Pages/MenuPage.tsx";
+import BookingPage from "./pages/BookingPage.tsx";
+import MenuPage from "./pages/MenuPage.tsx";
 
 
 const Main = styled.div`
