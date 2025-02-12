@@ -5,6 +5,9 @@ import NavigationBar from "./NavigationBar.tsx";
 import SolidLine from "./Typographi/styledline.tsx";
 import NewsFrontPage from "./NewsFrontPage.tsx";
 import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import BookingPage from "./Pages/BookingPage.tsx";
+import MenuPage from "./Pages/MenuPage.tsx";
 
 
 const Main = styled.div`
@@ -27,26 +30,25 @@ const StyledNavigation = styled.div`
 
 `;
 function App() {
-
-
     return (
-        <>
-            <GlobalStyle/>
+        <Router>
+            <GlobalStyle />
             <Main>
-
-            <StyledHeader>
-                Antons Skafferi
-                <SolidLine/>
-            </StyledHeader>
-
-            <StyledNavigation>
-                <NavigationBar/>
-            </StyledNavigation>
-            <DagensFrontPage/>
-            <VeckansFrontpage/>
-            <NewsFrontPage/>
-        </Main></>
-
+                <StyledHeader>
+                    Antons Skafferi
+                    <SolidLine />
+                </StyledHeader>
+                <StyledNavigation>
+                    <NavigationBar />
+                </StyledNavigation>
+                <Routes>
+                    <Route path="/" element={<DagensFrontPage />} />
+                    <Route path="/meny" element={<MenuPage />} />
+                    <Route path="/nyheter" element={<NewsFrontPage />} />
+                    <Route path="/bokabord" element={<BookingPage />} />
+                </Routes>
+            </Main>
+        </Router>
     );
 }
 

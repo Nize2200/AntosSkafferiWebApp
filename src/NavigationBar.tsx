@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import HamburgerMenu from "./Buttons/HamburgerMenu.tsx";
 import GlobalStyle from "./Typographi/KapakanaFontStyle.tsx";
 
@@ -39,7 +40,7 @@ const NavLinks = styled.div`
     gap: 20px;
 `;
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
     margin: 0 15px;
     color: #000;
     text-decoration: none;
@@ -50,27 +51,25 @@ const MenuItem = styled.a`
     }
 `;
 
-
 const NavigationBar: React.FC = () => {
-
-
     return (
         <>
-            <GlobalStyle/>
+            <GlobalStyle />
             <TopNavigation>
                 <StyledLogo>
-                    <MenuItem>Antons</MenuItem>
+                    <MenuItem to="/">Antons</MenuItem>
                 </StyledLogo>
                 <NavLinks>
-                    <MenuItem href="meny">Meny</MenuItem>
-                    <MenuItem href="nyheter">Nyheter</MenuItem>
-                    <MenuItem href="bokabord">Boka bord</MenuItem>
+                    <MenuItem to="/meny">Meny</MenuItem>
+                    <MenuItem to="/nyheter">Nyheter</MenuItem>
+                    <MenuItem to="/bokabord">Boka bord</MenuItem>
                 </NavLinks>
                 <HamburgerStyle>
-                    <HamburgerMenu/>
+                    <HamburgerMenu />
                 </HamburgerStyle>
             </TopNavigation>
         </>
     );
 };
+
 export default NavigationBar;
