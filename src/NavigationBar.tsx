@@ -28,7 +28,7 @@ const StyledLogo = styled.div`
     display: flex;
     align-items: center;
     font-family: "Kapakana", sans-serif;
-    font-size: 30px;
+    font-size: 4rem;
 `;
 
 const NavLinks = styled.div`
@@ -44,6 +44,7 @@ const MenuItem = styled(Link)`
     margin: 0 15px;
     color: #000;
     text-decoration: none;
+    
 
     &:hover {
         color: blue;
