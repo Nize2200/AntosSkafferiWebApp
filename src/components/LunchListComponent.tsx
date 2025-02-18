@@ -3,31 +3,28 @@ import styled from "styled-components";
 import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 
 const LunchList = styled.div`
-    padding: 20px;
+    padding: none;
 `;
 
 const LunchItem = styled.div`
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    border-bottom: 1px solid #b8b8b8;
+    font-weight: lighter;
 `;
 
-const LunchName = styled.h2`
-    font-size: 1.5rem;
-    margin: 0;
+const WeeksLunchesTag = styled.div`
+    font-family: "Kapakana", sans-serif;
+    font-size: 3rem;
+    padding-left: 20px;
+    border-bottom: 1px solid #000000;
 `;
 
-const LunchDescription = styled.p`
-    margin: 5px 0;
-`;
-
-const LunchPrice = styled.p`
-    font-weight: bold;
-`;
-
-const LunchDay = styled.p`
-    font-style: italic;
+const TodaysLunch = styled.div`
+    text-align: center;
+    justify-content: center;
+    align-content: center;
 `;
 
 interface Lunch {
@@ -43,21 +40,32 @@ interface LunchListComponentProps {
 }
 
 const getWeekday = (dayNumber: number): string => {
-    const weekdays = ["Mån", "Tis", "Ons", "Tor", "Fre", "Lör", "Sön"];
+    const weekdays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"];
     return weekdays[dayNumber - 1];
 };
 
+const CalculateTodaysLunch = (lunches: Lunch[]): Lunch => {
+    const today = new Date();
+    const weekday = today.getDay();
+    return lunches.find((lunch) => lunch.lunchDay ===  weekday);
+}
+
 const LunchListComponent: React.FC<LunchListComponentProps> = ({ lunches }) => {
+
+    const todaysLunch = CalculateTodaysLunch(lunches);
+
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle/>
+            <TodaysLunch>
+                <h1>Dagens lunch: {todaysLunch.lunchName} {todaysLunch.lunchPrice} :-</h1>
+            </TodaysLunch>
+
+            <WeeksLunchesTag>Veckans luncher</WeeksLunchesTag>
             <LunchList>
                 {lunches.map((lunch, index) => (
                     <LunchItem key={index}>
-                        <LunchName>{lunch.lunchName}</LunchName>
-                        <LunchDescription>{lunch.lunchDescription}</LunchDescription>
-                        <LunchPrice>{lunch.lunchPrice} kr</LunchPrice>
-                        <LunchDay>{getWeekday(lunch.lunchDay)}</LunchDay>
+                        {getWeekday(lunch.lunchDay)}: {lunch.lunchName}
                     </LunchItem>
                 ))}
             </LunchList>
