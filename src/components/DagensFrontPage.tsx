@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 import LunchListComponent from "./LunchListComponent.tsx";
-import {fetchLunches} from "../api/ApiFetch";
+import {fetchLunches} from "../api/ApiFetch.tsx";
 
 const Main = styled.div`
 
