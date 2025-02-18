@@ -42,17 +42,19 @@ interface LunchListComponentProps {
 
 const getWeekday = (dayNumber: number): string => {
     const weekdays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"];
-    return weekdays[dayNumber];
+    return weekdays[dayNumber -1 ];
 };
 
 const CalculateTodaysLunch = (lunches: Lunch[]): Lunch | undefined => {
     const today = new Date();
+    console.log("lunches"+lunches)
     const weekday = today.getDay();
     return lunches.find((lunch) => lunch.lunchDay ===  weekday);
 }
 
 const LunchListComponent: React.FC<LunchListComponentProps> = ({ lunches }) => {
     const todaysLunch = CalculateTodaysLunch(lunches);
+    console.log(todaysLunch);
 
     return (
         <>

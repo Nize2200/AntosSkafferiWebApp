@@ -34,6 +34,7 @@ const DagensFrontPage: React.FC = () => {
         const getLunches = async () => {
             try {
                 const data = await fetchLunches();
+                console.log("data:"+data)
                 setLunches(data);
             } catch (error) {
                 console.error('Error fetching lunches:', error);
