@@ -1,18 +1,10 @@
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 import LunchListComponent from "./LunchListComponent.tsx";
+import {fetchLunches} from "../api/ApiFetch";
 
 const Main = styled.div`
-
-`;
-
-const StyledTitle = styled.div`
-    text-align: center;
-    font-size: 50px;
-    font-family: "Kapakana", sans-serif;
-`;
-const StyledText = styled.div`
-
 
 `;
 
@@ -34,18 +26,31 @@ const lunches = [
     }
 ];
 
-function App() {
 
+const DagensFrontPage: React.FC = () => {
+    const [lunches, setLunches] = useState<Lunch[]>([]);
+
+    useEffect(() => {
+        const getLunches = async () => {
+            try {
+                const data = await fetchLunches();
+                setLunches(data);
+            } catch (error) {
+                console.error('Error fetching lunches:', error);
+            }
+        };
+
+        getLunches();
+    }, []);
 
     return (
         <>
-            <GlobalStyle/>
+            <GlobalStyle />
             <Main>
                 <LunchListComponent lunches={lunches} />
             </Main>
         </>
     );
-}
+};
 
-
-export default App;
+export default DagensFrontPage;
