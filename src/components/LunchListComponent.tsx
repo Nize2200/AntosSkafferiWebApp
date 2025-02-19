@@ -13,6 +13,7 @@ const LunchItem = styled.div`
     padding-top: 10px;
     border-bottom: 1px solid #b8b8b8;
     font-weight: lighter;
+ 
 `;
 
 const WeeksLunchesTag = styled.div`
@@ -20,6 +21,7 @@ const WeeksLunchesTag = styled.div`
     font-size: 3rem;
     padding-left: 20px;
     border-bottom: 1px solid #000000;
+  
 `;
 
 const TodaysLunch = styled.div`
