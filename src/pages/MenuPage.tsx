@@ -2,6 +2,8 @@ import React from "react";
 import SolidLine from "../typographi/styledline.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
 import styled from "styled-components";
+import StarterMenuPage from "../components/StarterMenuPage.tsx";
+
 
 const Main = styled.div`
 `;
@@ -32,6 +34,7 @@ const MenuPage: React.FC = () => {
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
+            <StarterMenuPage/>
         </Main>
     )
         ;
