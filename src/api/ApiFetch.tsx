@@ -26,6 +26,7 @@ export const fetchFoods = async () => {
         console.error("Error fetching foods:", error);
         throw error;
     }
+
 };
 
 export const fetchStarters = async () => {

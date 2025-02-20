@@ -26,12 +26,35 @@ const StyledNavigation = styled.div`
 
 `;
 
-const filterByCategory = (foods: any[], category: string) => {
-    return foods.filter(food => food.foodCategory === category);
-};
+interface Food {
+    foodID: number;
+    foodName: string;
+    foodType: string;
+    foodCategory: string;
+    foodDescription: string;
+    foodPrice: number;
+}
 
 const MenuPage: React.FC = () => {
 
+    const [starters, setStarters] = useState<Food[]>([]);
+    const [mainCourses, setMainCourses] = useState<Food[]>([]);
+    const [desserts, setDesserts] = useState<Food[]>([]);
+
+    const getFoods = async () => {
+        try {
+            const data: Food[] = await fetchFoods();
+            setStarters(data.filter(food => food.foodCategory === "STARTER"));
+            setMainCourses(data.filter(food => food.foodCategory === "MAIN_COURSE"));
+            setDesserts(data.filter(food => food.foodCategory === "DESSERT"));
+        } catch (error) {
+            console.error('Error fetching foods:', error);
+        }
+    };
+
+    useEffect(() => {
+        getFoods();
+    }, []);
 
     return (
         <Main>
@@ -42,7 +65,7 @@ const MenuPage: React.FC = () => {
             <StyledNavigation>
                 <NavigationBar/>
             </StyledNavigation>
-            <StarterMenuPage/>
+            <StarterMenuPage foods={starters}/>
         </Main>
     )
         ;
