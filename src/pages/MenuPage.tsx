@@ -3,6 +3,7 @@ import SolidLine from "../typographi/styledline.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
 import styled from "styled-components";
 import StarterMenuPage from "../components/StarterMenuPage.tsx";
+import MainMenuPage from "../components/MainMenuPage.tsx";
 import {fetchFoods} from "../api/ApiFetch.tsx";
 
 
@@ -26,6 +27,7 @@ const StyledNavigation = styled.div`
 
 `;
 
+
 interface Food {
     foodID: number;
     foodName: string;
@@ -36,7 +38,6 @@ interface Food {
 }
 
 const MenuPage: React.FC = () => {
-
     const [starters, setStarters] = useState<Food[]>([]);
     const [mainCourses, setMainCourses] = useState<Food[]>([]);
     const [desserts, setDesserts] = useState<Food[]>([]);
@@ -66,9 +67,9 @@ const MenuPage: React.FC = () => {
                 <NavigationBar/>
             </StyledNavigation>
             <StarterMenuPage foods={starters}/>
+            <MainMenuPage foods={mainCourses}/>
         </Main>
-    )
-        ;
+    );
 };
 
 export default MenuPage;
