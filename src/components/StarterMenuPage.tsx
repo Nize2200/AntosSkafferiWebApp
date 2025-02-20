@@ -9,7 +9,6 @@ const InfoContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
     margin-top: 20px;
 `;
 
@@ -37,9 +36,9 @@ const StyledPrice = styled.div`
 `;
 
 const StyledImage = styled.img`
-    width: 100px;
-    height: 100px;
-    margin-right: 0px;
+    width: 20%;
+    height: 20%;
+    margin-right: 100px;
 `;
 
 const StyledText = styled.div`
@@ -67,11 +66,14 @@ const StarterMenuPage: React.FC<FoodListProps> = ({ foods }) => {
 
     return (
         <><GlobalStyle/>
-            <StyledImage src="images/skagen.png" alt="Skagen"/>
+            <InfoContainer>
+
             <StyledMainTitle>
                 Förrätter:
                 <Styledline/>
             </StyledMainTitle>
+                <StyledImage src="images/skagen.png" alt="Skagen"/>
+            </InfoContainer>
             {foods.map((food, index) => (
                 <div key={index}>
                     <StyledTitle>
