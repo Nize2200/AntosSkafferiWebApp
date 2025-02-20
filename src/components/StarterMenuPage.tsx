@@ -1,15 +1,41 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
-import Styledline from "../typographi/styledline.tsx";
 import Greystyledline from "../typographi/greystyledline.tsx";
 
+const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
-const InfoContainer = styled.div`
+const TitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 100px;
+`;
+
+const ImageContainer = styled.div`
+    width: 30%;
+    height: 30%;
+    display: flex;
+`;
+
+const FoodListContainer = styled.div`
+    width: 100%;
+    margin-top: 200px;
+    position: absolute;
+`;
+
+const FoodContainer = styled.div`
+    margin-bottom: 20px;
+`;
+
+const LineContainer = styled.div`
+    width: 40%;
+    margin-top: 1px;
+    margin-left: 100px;
 `;
 
 const StyledMainTitle = styled.div`
@@ -27,18 +53,18 @@ const StyledTitle = styled.div`
     width: 40%;
     display: flex;
     justify-content: space-between;
-    
 `;
 
 const StyledPrice = styled.div`
     text-align: right;
-    
 `;
 
 const StyledImage = styled.img`
-    width: 20%;
-    height: 20%;
+    width: 70%;
+    height: 70%;
     margin-right: 100px;
+    margin-top: 20px;
+    border-radius: 50px;
 `;
 
 const StyledText = styled.div`
@@ -46,7 +72,7 @@ const StyledText = styled.div`
     font-size: 17px;
     color: #939393;
     margin-left: 100px;
-    width: 40%;
+    width: 30%;
 `;
 
 interface Food {
@@ -62,35 +88,37 @@ type FoodListProps = {
     foods: Food[];
 }
 
-const StarterMenuPage: React.FC<FoodListProps> = ({ foods }) => {
-
+const StarterMenuPage: React.FC<FoodListProps> = ({foods}) => {
     return (
-        <><GlobalStyle/>
-            <InfoContainer>
-
-            <StyledMainTitle>
-                Förrätter:
-                <Styledline/>
-            </StyledMainTitle>
-                <StyledImage src="images/skagen.png" alt="Skagen"/>
-            </InfoContainer>
-            {foods.map((food, index) => (
-                <div key={index}>
-                    <StyledTitle>
-                        {food.foodName}
-                        <StyledPrice>
-                            {food.foodPrice}kr
-                        </StyledPrice>
-                    </StyledTitle>
-                    <StyledText>
-                        <Greystyledline/>
-                        {food.foodDescription}
-                    </StyledText>
-                </div>
-            ))}
-
-        </>
-
+        <PageContainer>
+            <GlobalStyle/>
+            <TitleContainer>
+                <StyledMainTitle>
+                    Förrätter
+                </StyledMainTitle>
+                <ImageContainer>
+                    <StyledImage src="images/skagen.png" alt="Skagen"/>
+                </ImageContainer>
+            </TitleContainer>
+            <FoodListContainer>
+                {foods.map((food, index) => (
+                    <FoodContainer key={index}>
+                        <StyledTitle>
+                            {food.foodName}
+                            <StyledPrice>
+                                {food.foodPrice}kr
+                            </StyledPrice>
+                        </StyledTitle>
+                        <LineContainer>
+                            <Greystyledline/>
+                        </LineContainer>
+                        <StyledText>
+                            {food.foodDescription}
+                        </StyledText>
+                    </FoodContainer>
+                ))}
+            </FoodListContainer>
+        </PageContainer>
     );
 }
 
