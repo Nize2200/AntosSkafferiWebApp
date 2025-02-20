@@ -3,7 +3,15 @@ import styled from "styled-components";
 import GlobalStyle from "../typographi/KapakanaFontStyle.tsx";
 import Styledline from "../typographi/styledline.tsx";
 import Greystyledline from "../typographi/greystyledline.tsx";
-import {fetchStarters} from "../api/ApiFetch.tsx";
+
+
+const InfoContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin-top: 20px;
+`;
 
 const StyledMainTitle = styled.div`
     text-align: center;
@@ -26,6 +34,12 @@ const StyledTitle = styled.div`
 const StyledPrice = styled.div`
     text-align: right;
     
+`;
+
+const StyledImage = styled.img`
+    width: 100px;
+    height: 100px;
+    margin-right: 0px;
 `;
 
 const StyledText = styled.div`
@@ -53,6 +67,7 @@ const StarterMenuPage: React.FC<FoodListProps> = ({ foods }) => {
 
     return (
         <><GlobalStyle/>
+            <StyledImage src="images/skagen.png" alt="Skagen"/>
             <StyledMainTitle>
                 Förrätter:
                 <Styledline/>
@@ -71,6 +86,7 @@ const StarterMenuPage: React.FC<FoodListProps> = ({ foods }) => {
                     </StyledText>
                 </div>
             ))}
+
         </>
 
     );
