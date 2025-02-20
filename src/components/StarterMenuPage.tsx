@@ -18,6 +18,14 @@ const StyledTitle = styled.div`
     font-size: 30px;
     margin-left: 100px;
     width: 40%;
+    display: flex;
+    justify-content: space-between;
+    
+`;
+
+const StyledPrice = styled.div`
+    text-align: right;
+    
 `;
 
 const StyledText = styled.div`
@@ -28,7 +36,7 @@ const StyledText = styled.div`
     width: 40%;
 `;
 
-interface foodID {
+interface Food {
     foodID: number;
     foodName: string;
     foodType: string;
@@ -37,22 +45,11 @@ interface foodID {
     foodPrice: number;
 }
 
-const StarterMenuPage: React.FC = () => {
-    const [starters, setStarters] = useState([]);
+type FoodListProps = {
+    foods: Food[];
+}
 
-    useEffect(() => {
-        const getStarters = async () => {
-            try {
-                const data = await fetchStarters();
-                console.log("data:"+data)
-                setStarters(data);
-            } catch (error) {
-                console.error('Error fetching starters:', error);
-            }
-        };
-
-        getStarters();
-    }, []);
+const StarterMenuPage: React.FC<FoodListProps> = ({ foods }) => {
 
     return (
         <><GlobalStyle/>
@@ -60,15 +57,17 @@ const StarterMenuPage: React.FC = () => {
                 Förrätter:
                 <Styledline/>
             </StyledMainTitle>
-            {starters.map((starter: foodID) => (
-                <div key={starter.foodID}>
+            {foods.map((food, index) => (
+                <div key={index}>
                     <StyledTitle>
-                        {starter.foodName}
-                        {starter.foodPrice} kr
-                        <Greystyledline/>
+                        {food.foodName}
+                        <StyledPrice>
+                            {food.foodPrice}kr
+                        </StyledPrice>
                     </StyledTitle>
                     <StyledText>
-                        {starter.foodDescription}
+                        <Greystyledline/>
+                        {food.foodDescription}
                     </StyledText>
                 </div>
             ))}

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as React from "react";
 
 const Solidline = styled.div`
     height: 0px;
