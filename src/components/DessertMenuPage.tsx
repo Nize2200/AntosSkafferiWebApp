@@ -12,7 +12,6 @@ const PageContainer = styled.div`
 
 const TitleContainer = styled.div`
     display: flex;
-    flex-direction: row-reverse; /* Spegelvänd layout */
     justify-content: space-between;
     width: 100%;
     margin-top: 100px;
@@ -28,10 +27,6 @@ const FoodListContainer = styled.div`
     width: 100%;
     margin-top: 200px;
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 100px;
 `;
 
 const FoodContainer = styled.div`
@@ -68,8 +63,8 @@ const StyledPrice = styled.div`
 const StyledImage = styled.img`
     width: 70%;
     height: 70%;
-    margin-left: 100px;
-    margin-top: 60px;
+    margin-right: 100px;
+    margin-top: 20px;
     border-radius: 50px;
 `;
 
@@ -94,19 +89,18 @@ type FoodListProps = {
     foods: Food[];
 }
 
-const MainMenuPage: React.FC<FoodListProps> = ({foods}) => {
+const StarterMenuPage: React.FC<FoodListProps> = ({foods}) => {
     return (
         <PageContainer>
             <GlobalStyle/>
             <TitleContainer>
                 <StyledMainTitle>
-                    Varmrätter
+                    Dessert
                 </StyledMainTitle>
                 <ImageContainer>
-                    <StyledImage src="images/meatball.png" alt="Meatball"/>
+                    <StyledImage src="images/creme.png" alt="Creme"/>
                 </ImageContainer>
             </TitleContainer>
-
             <FoodListContainer>
                 {foods.map((food, index) => (
                     <FoodContainer key={index}>
@@ -129,4 +123,4 @@ const MainMenuPage: React.FC<FoodListProps> = ({foods}) => {
     );
 }
 
-export default MainMenuPage;
+export default StarterMenuPage;

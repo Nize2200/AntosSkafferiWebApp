@@ -5,6 +5,7 @@ import styled from "styled-components";
 import StarterMenuPage from "../components/StarterMenuPage.tsx";
 import MainMenuPage from "../components/MainMenuPage.tsx";
 import {fetchFoods} from "../api/ApiFetch.tsx";
+import DessertMenuPage from "../components/DessertMenuPage.tsx";
 
 
 const Main = styled.div`
@@ -68,6 +69,7 @@ const MenuPage: React.FC = () => {
             </StyledNavigation>
             <StarterMenuPage foods={starters}/>
             <MainMenuPage foods={mainCourses}/>
+            <DessertMenuPage foods={desserts}/>
         </Main>
     );
 };
