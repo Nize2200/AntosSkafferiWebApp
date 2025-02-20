@@ -30,7 +30,7 @@ export const fetchFoods = async () => {
 
 export const fetchStarters = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/foods/Category/{Starter}"); // Add http://
+        const response = await fetch("http://localhost:8080/api/foods/Category/STARTER"); // Add http://
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -45,7 +45,7 @@ export const fetchStarters = async () => {
 
 export const fetchMain = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/foods/Category/{Main}"); // Add http://
+        const response = await fetch("http://localhost:8080/api/foods/Category/MAIN_COURSE"); // Add http://
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -60,7 +60,7 @@ export const fetchMain = async () => {
 
 export const fetchDesserts = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/foods/Category/{Dessert}"); // Add http://
+        const response = await fetch("http://localhost:8080/api/foods/Category/DESSERT"); // Add http://
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -75,7 +75,7 @@ export const fetchDesserts = async () => {
 
 export const fetchDrinks = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/foods/Category/{Drink}"); // Add http://
+        const response = await fetch("http://localhost:8080/api/foods/Category/DRINKS"); // Add http://
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
