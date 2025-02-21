@@ -13,6 +13,21 @@ export const fetchLunches = async () => {
     }
 };
 
+export const fetchNews= async () => {
+    try {
+        const response = await fetch("http://localhost:8080/api/news/"); // Add http://
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching lunches:", error);
+        throw error;
+    }
+};
+
 export const fetchFoods = async () => {
     try {
         const response = await fetch("http://localhost:8080/api/foods/"); // Add http://
