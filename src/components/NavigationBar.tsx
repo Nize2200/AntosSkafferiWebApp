@@ -19,8 +19,7 @@ const TopNavigation = styled.div`
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: space-between;  /* Sprid ut elementen */
     padding: 0 20px;
 `;
 
@@ -34,14 +33,14 @@ const StyledLogo = styled.div`
 const NavLinks = styled.div`
     font-size: 20px;
     display: flex;
-    text-align: center;
     justify-content: center;
-    flex-grow: 1;
     gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 `;
 
 const MenuItem = styled(Link)`
-    margin: 0 15px;
     color: #000;
     text-decoration: none;
     
