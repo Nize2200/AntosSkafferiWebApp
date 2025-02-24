@@ -5,58 +5,56 @@ import Greystyledline from "../typographi/greystyledline.tsx";
 
 const PageContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+    flex-direction: row;
+    width: 100%;
 `;
 
-const TitleContainer = styled.div`
+const ListContainer = styled.div`
     display: flex;
-    flex-direction: row-reverse; /* Spegelvänd layout */
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-top: -5rem;
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-top: 0;
+    }
 `;
 
 const ImageContainer = styled.div`
-    width: 30%;
-    height: 30%;
+    width: 50%;
     display: flex;
+    justify-content: center;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const FoodListContainer = styled.div`
-    width: 100%;
-    margin-top: 200px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 100px;
+    width: 90%;
 `;
 
 const FoodContainer = styled.div`
     margin-bottom: 20px;
+    width: 100%;
 `;
 
 const LineContainer = styled.div`
-    width: 40%;
+    width: 100%;
     margin-top: 1px;
-    margin-left: 100px;
 `;
 
 const StyledMainTitle = styled.div`
     text-align: center;
     font-size: 70px;
     font-family: "Kapakana", sans-serif;
-    margin-left: 100px;
-    width: 40%;
+    margin-bottom: 20px;
 `;
 
 const StyledTitle = styled.div`
     text-align: left;
     font-size: 30px;
-    margin-left: 100px;
-    width: 40%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 `;
@@ -66,19 +64,17 @@ const StyledPrice = styled.div`
 `;
 
 const StyledImage = styled.img`
-    width: 70%;
-    height: 70%;
-    margin-left: 100px;
-    margin-top: 60px;
-    border-radius: 50px;
+    border-radius: 55px;
+    width: 25vw;
+    height: 25vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin-top: 2rem;
 `;
 
 const StyledText = styled.div`
-    text-align: left;
-    font-size: 17px;
+    font-size: 1.2rem;
     color: #939393;
-    margin-left: 100px;
-    width: 30%;
 `;
 
 interface Food {
@@ -97,34 +93,32 @@ type FoodListProps = {
 const MainMenuPage: React.FC<FoodListProps> = ({foods}) => {
     return (
         <PageContainer>
-            <GlobalStyle/>
-            <TitleContainer>
-                <StyledMainTitle>
-                    Varmrätter
-                </StyledMainTitle>
-                <ImageContainer>
-                    <StyledImage src="images/meatball.png" alt="Meatball"/>
-                </ImageContainer>
-            </TitleContainer>
-
-            <FoodListContainer>
-                {foods.map((food, index) => (
-                    <FoodContainer key={index}>
-                        <StyledTitle>
-                            {food.foodName}
-                            <StyledPrice>
-                                {food.foodPrice}kr
-                            </StyledPrice>
-                        </StyledTitle>
-                        <LineContainer>
-                            <Greystyledline/>
-                        </LineContainer>
-                        <StyledText>
-                            {food.foodDescription}
-                        </StyledText>
-                    </FoodContainer>
-                ))}
-            </FoodListContainer>
+            <ImageContainer>
+                <StyledImage src="images/meatball.png" alt="Meatball"/>
+            </ImageContainer>
+            <ListContainer>
+                <FoodListContainer>
+                    <StyledMainTitle>
+                        Varmrätter
+                    </StyledMainTitle>
+                    {foods.map((food, index) => (
+                        <FoodContainer key={index}>
+                            <StyledTitle>
+                                {food.foodName}
+                                <StyledPrice>
+                                    {food.foodPrice}kr
+                                </StyledPrice>
+                            </StyledTitle>
+                            <LineContainer>
+                                <Greystyledline/>
+                            </LineContainer>
+                            <StyledText>
+                                {food.foodDescription}
+                            </StyledText>
+                        </FoodContainer>
+                    ))}
+                </FoodListContainer>
+            </ListContainer>
         </PageContainer>
     );
 }
