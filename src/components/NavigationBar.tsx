@@ -19,7 +19,7 @@ const TopNavigation = styled.div`
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Sprid ut elementen */
+    justify-content: space-between;
     padding: 0 20px;
 `;
 
