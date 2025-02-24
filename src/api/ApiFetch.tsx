@@ -1,6 +1,6 @@
-export const fetchLunches = async () => {
+export const fetchLunches = async (week: number) => {
     try {
-        const response = await fetch("http://localhost:8080/api/lunches/"); // Add http://
+        const response = await fetch(`http://localhost:8080/api/lunches/${week}`); // Add http://
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

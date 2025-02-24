@@ -43,13 +43,12 @@ interface LunchListComponentProps {
 }
 
 const getWeekday = (dayNumber: number): string => {
-    const weekdays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"];
+    const weekdays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag"];
     return weekdays[dayNumber -1 ];
 };
 
 const CalculateTodaysLunch = (lunches: Lunch[]): Lunch | undefined => {
     const today = new Date();
-    console.log("lunches"+lunches)
     const weekday = today.getDay();
     return lunches.find((lunch) => lunch.lunchDay ===  weekday);
 }
