@@ -1,15 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import SolidLine from "../typographi/styledline.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
 import styled from "styled-components";
 import StarterMenuPage from "../components/StarterMenuPage.tsx";
 import MainMenuPage from "../components/MainMenuPage.tsx";
-import {fetchFoods} from "../api/ApiFetch.tsx";
+import { fetchFoods, fetchDrinks } from "../api/ApiFetch.tsx";
 import DessertMenuPage from "../components/DessertMenuPage.tsx";
+import DrinksMenuPage from "../components/DrinksMenuPage.tsx";
 
-
-const Main = styled.div`
-`;
+const Main = styled.div``;
 const StyledHeader = styled.div`
     text-align: center;
     justify-content: center;
@@ -18,16 +17,13 @@ const StyledHeader = styled.div`
     font-size: 4rem;
     margin-bottom: 50px;
     margin-top: 4rem;
-
 `;
 
 const StyledNavigation = styled.div`
     text-align: center;
     font-size: 110px;
     margin-bottom: 50px;
-
 `;
-
 
 interface Food {
     foodID: number;
@@ -38,38 +34,51 @@ interface Food {
     foodPrice: number;
 }
 
+interface Drink {
+    drinkID: number;
+    drinkName: string;
+    drinkCategory: string;
+    drinkDescription: string;
+    drinkPrice: number;
+}
+
 const MenuPage: React.FC = () => {
     const [starters, setStarters] = useState<Food[]>([]);
     const [mainCourses, setMainCourses] = useState<Food[]>([]);
     const [desserts, setDesserts] = useState<Food[]>([]);
+    const [drinks, setDrinks] = useState<Drink[]>([]);
 
-    const getFoods = async () => {
+    const getFoodsAndDrinks = async () => {
         try {
-            const data: Food[] = await fetchFoods();
-            setStarters(data.filter(food => food.foodCategory === "STARTER"));
-            setMainCourses(data.filter(food => food.foodCategory === "MAIN_COURSE"));
-            setDesserts(data.filter(food => food.foodCategory === "DESSERT"));
+            const foodData: Food[] = await fetchFoods();
+            setStarters(foodData.filter(food => food.foodCategory === "STARTER"));
+            setMainCourses(foodData.filter(food => food.foodCategory === "MAIN_COURSE"));
+            setDesserts(foodData.filter(food => food.foodCategory === "DESSERT"));
+
+            const drinkData: Drink[] = await fetchDrinks();
+            setDrinks(drinkData);
         } catch (error) {
-            console.error('Error fetching foods:', error);
+            console.error('Error fetching foods and drinks:', error);
         }
     };
 
     useEffect(() => {
-        getFoods();
+        getFoodsAndDrinks();
     }, []);
 
     return (
         <Main>
             <StyledHeader>
                 Antons skafferi
-                <SolidLine/>
+                <SolidLine />
             </StyledHeader>
             <StyledNavigation>
-                <NavigationBar/>
+                <NavigationBar />
             </StyledNavigation>
-            <StarterMenuPage foods={starters}/>
-            <MainMenuPage foods={mainCourses}/>
-            <DessertMenuPage foods={desserts}/>
+            <StarterMenuPage foods={starters} />
+            <MainMenuPage foods={mainCourses} />
+            <DessertMenuPage foods={desserts} />
+            <DrinksMenuPage drinks={drinks} />
         </Main>
     );
 };
