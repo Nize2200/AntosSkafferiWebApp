@@ -72,6 +72,7 @@ const NewsFrontPage: React.FC = () => {
         getNews();
     }, []);
 
+
     return (
         <>
             <GlobalStyle />
@@ -79,7 +80,11 @@ const NewsFrontPage: React.FC = () => {
                 <StyledTitle>Nyheter</StyledTitle>
                 {newsset.map((newsItem) => (
                     <NewsContainer key={newsItem.newsTitle}>
-                        <NewsImage src={newsItem.newsImage} alt={newsItem.newsTitle} />
+                        <NewsImage
+                            src={`http://localhost:8080/${newsItem.newsImage}`}
+                            alt={newsItem.newsTitle}
+
+                        />
                         <NewsText>
                             <NewsHeading>{newsItem.newsTitle}</NewsHeading>
                             <NewsInfo>{newsItem.newsInfo}</NewsInfo>
