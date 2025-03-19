@@ -43,11 +43,10 @@ const NavLinks = styled.div`
 const MenuItem = styled(Link)`
     color: #000;
     text-decoration: none;
-    
+
 
     &:hover {
-        color: blue;
-        text-decoration: underline;
+        color: #8a8a8a;
     }
 `;
 
